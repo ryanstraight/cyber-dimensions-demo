@@ -1,0 +1,162 @@
+# _worldbuilding.yml - Ribera Power Grid Incident Case Study Data
+world:
+  # --- Global Settings ---
+  this_year: 2024 # Base year for calculations
+  
+  # --- Location ---
+  city_name: "Ribera"
+  state_name: "Arizona"
+  state_abbr: "AZ"
+  population: "47,000"
+  customer_count: "18,500"
+  
+  # --- Organizations ---
+  utility_name: "Ribera Municipal Utilities"
+  utility_acronym: "RMU"
+  utility_email_domain: "riberamu.gov"
+  city_email_domain: "ribera-az.gov"
+  
+  vendor_company_name: "Phoenix Edison"
+  
+  # News Organizations
+  local_newspaper_name: "The Ribera Tribune"
+  tech_magazine_name: "GRID WIRE"
+  tech_magazine_tagline: "Connecting Technology, Infrastructure, and Security"
+  
+  # Government Organizations
+  state_agency_name: "Arizona Corporation Commission"
+  state_agency_abbr: "ACC"
+  federal_agency_name: "Department of Critical Infrastructure"
+  federal_subagency_name: "National Cybersecurity and Infrastructure Protection Agency"
+  federal_team_name: "Industrial Control Systems Emergency Response Team"
+  federal_team_abbr: "ICSERT"
+  
+  # Advocacy Organizations
+  advocacy_group_name: "Ribera Energy Watch"
+  
+  # --- Personnel ---
+  # IT Manager
+  it_manager_name_first: "Maria"
+  it_manager_name_last: "Santos"
+  it_manager_name_salutation: "Ms."
+  it_manager_title: "IT Manager"
+  
+  # Power System Operator
+  power_operator_name_first: "David"
+  power_operator_name_last: "Kim"
+  power_operator_name_salutation: "Mr."
+  power_operator_title: "Power System Operator"
+  
+  # City Manager
+  city_manager_name_first: "Jennifer"
+  city_manager_name_last: "Walsh"
+  city_manager_name_salutation: "Ms."
+  city_manager_title: "City Manager"
+  
+  # Vendor Technician
+  vendor_technician_name_first: "Carlos"
+  vendor_technician_name_last: "Mendoza"
+  vendor_technician_name_salutation: "Mr."
+  vendor_technician_title: "Senior Technician"
+  
+  # Reporter
+  reporter_name_first: "Rebecca"
+  reporter_name_last: "Martinez"
+  reporter_name_salutation: "Ms."
+  reporter_title: "Technology Reporter"
+  
+  # Advocacy Spokesperson
+  advocacy_spokesperson_name_first: "Patricia"
+  advocacy_spokesperson_name_last: "Chen"
+  advocacy_spokesperson_name_salutation: "Ms."
+  advocacy_spokesperson_title: "Organization Spokesperson"
+  
+  # --- Technical Details ---
+  incident_date: "March 15, 2024"
+  incident_date_short: "March 15"
+  scada_alert_time: "14:17:23"
+  scada_alert_time_display: "2:17 PM"
+  initial_response_time: "2:19 PM"
+  detailed_analysis_time: "2:45 PM"
+  vendor_call_time: "3:02 PM"
+  
+  # Network Details
+  attacker_ip_1: "203.45.67.89"
+  attacker_ip_2: "198.51.100.42"
+  attacker_ip_3: "192.0.2.146"
+  target_hmi_system: "HMI-SUBSTATION-02"
+  target_ip_address: "172.16.10.15"
+  network_subnet: "172.16.10.0/24"
+  mtu_system_name: "MTU-CENTRAL-01"
+  
+  # Technical Specifications
+  failed_auth_attempts: "47"
+  failed_auth_timeframe: "12 minutes"
+  polling_frequency_detected: "15x normal baseline"
+  polling_rate_detected: "2.3 Hz"
+  polling_rate_normal: "0.15 Hz"
+  
+  # Protocol Details
+  protocol_modbus: "Modbus TCP/IP"
+  protocol_dnp3: "DNP3"
+  protocol_ethernet: "EtherNet/IP"
+  port_modbus: "502"
+  port_dnp3: "20000"
+  port_ethernet: "44818"
+  
+  # System Names
+  scada_system_name: "Schneider Electric EcoStruxure SCADA System"
+  smart_meter_brand: "Landis+Gyr E470"
+  network_equipment_brand: "Cisco industrial networking equipment"
+  
+  # Contact Information
+  emergency_phone: "480-555-0123"
+  icsert_phone: "1-877-555-4237"
+  icsert_email: "icsert@dci.gov"
+  icsert_website: "https://www.dci.gov/icsert"
+  
+  # Report IDs
+  acc_report_id: "ACC-2024-CI-0847"
+  icsert_alert_id: "ICSERT-ALERT-24-075-01"
+  forensic_incident_id: "INC-2024-0315-001"
+  
+  # Project Details
+  modernization_budget: "$8.2 million"
+  smart_meters_installed: "12,000"
+  modernization_start_year: "2022"
+  
+  # Alert Classifications
+  alert_level: "CRITICAL"
+  severity_level: "Medium"
+  sophistication_level: "Advanced"
+  
+  # Regulatory Details
+  nerc_standard: "CIP-008"
+  state_statute: "A.R.S. §40-204"
+  reporting_deadline: "72 hours"
+  
+  # Infrastructure Impact
+  potential_customer_impact: "18,500 customers"
+  service_disruption: "None"
+  data_compromise: "None"
+
+  # --- Derived/Computed Variables ---
+  # Combined location reference
+  city_state: "Ribera, Arizona"
+
+  # Attacker IP list formatting
+  attacker_ips_list: "203.45.67.89, 198.51.100.42, 192.0.2.146"
+
+  # Full names with titles
+  it_manager_fullname: "Maria Santos"
+  power_operator_fullname: "David Kim"
+  city_manager_fullname: "Jennifer Walsh"
+  vendor_technician_fullname: "Carlos Mendoza"
+  reporter_fullname: "Rebecca Martinez"
+  advocacy_spokesperson_fullname: "Patricia Chen"
+
+  # Email addresses
+  power_operator_email: "dkim@riberamu.gov"
+  it_manager_email: "msantos@riberamu.gov"
+  city_manager_email: "jwalsh@ribera-az.gov"
+  reporter_email: "rmartinez@riberatribune.com"

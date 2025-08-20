@@ -1,0 +1,111 @@
+project:
+  type: website
+  output-dir: docs
+  pre-render: _scripts/setup.R
+
+website:
+  title: "Cyber Dimensions Case Study Demo"
+  navbar:
+    background: primary
+    search: false
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Introduction" 
+        href: circuit-intro.qmd
+      - text: "Case Study Content"
+        href: circuit-content.qmd
+      - text: "Assignment"
+        href: circuit-assignment.qmd
+    right:
+      - icon: github
+        href: https://github.com/ryanstraight/cyber-dimensions-oer
+        text: "Cyber Dimensions Toolkit"
+      - icon: github
+        href: https://github.com/ryanstraight/cyber-dimensions-demo
+        text: "Demo Source"
+
+# Include shared metadata from worldbuilding file
+metadata-files:
+  - _worldbuilding.yml
+
+# For getting inline R code
+engine: knitr
+
+bibliography: references.bib
+
+filters:
+  - custom-callout
+
+custom-callout:
+  theoretical-foundation:
+    title: "Theoretical Foundation"
+    icon-symbol: "🏛️"
+    color: "#594a3d"
+    appearance: "simple"
+  
+  pedagogical-consideration:
+    title: "Pedagogical Consideration"
+    icon-symbol: "🎓"
+    color: "#4a6e8a"
+    appearance: "simple"
+  
+  implementation-guidance:
+    title: "Implementation Guidance"
+    icon-symbol: "🔧"
+    color: "#736355"
+    appearance: "simple"
+  
+  assessment-strategy:
+    title: "Assessment Strategy"
+    icon-symbol: "📋"
+    color: "#c88a3f"
+    appearance: "simple"
+  
+  cognitive-load-alert:
+    title: "Cognitive Load Consideration"
+    icon-symbol: "🧠"
+    color: "#a94442"
+    appearance: "simple"
+  
+  scaffolding-tip:
+    title: "Scaffolding Strategy"
+    icon-symbol: "🏗️"
+    color: "#5a7d5a"
+    appearance: "simple"
+  
+  learner-experience:
+    title: "Learner Experience Focus"
+    icon-symbol: "👤"
+    color: "#8a7c6f"
+    appearance: "simple"
+  
+  evidence-base:
+    title: "Research Evidence"
+    icon-symbol: "📊"
+    color: "#4a6e8a"
+    appearance: "simple"
+
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc-location: right
+    toc-title: "Contents"
+    number-sections: false
+    fig-responsive: true
+    link-external-newwindow: true
+    smooth-scroll: true
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+
+execute:
+  echo: false
+  message: false
+  warning: false
+  error: false
+  freeze: auto
+
+license: "CC BY-NC-SA 4.0"

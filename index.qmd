@@ -1,0 +1,111 @@
+---
+title: "Cyber Dimensions Case Study Demo"
+author: "Ryan Straight, Ph.D"
+
+bibliography: references.bib
+csl: https://www.zotero.org/styles/apa
+
+nocite: |
+  @kolb1984experiential, @bruner1960process, @wineburg2001historical, @chatterjee2008touch, @broudy1991case
+  
+format:
+  html: default
+---
+
+```{r}
+#| label: setup
+#| include: false
+# This chunk allows for single-file rendering for development
+source("_scripts/solo_render.R")
+```
+
+::: {.callout-note title="Navigation Guide" role="navigation" aria-label="Document navigation"}
+
+**Quick Start**: Ready to begin? Jump to @sec-getting-started for immediate setup instructions.  
+**Content Overview**: Learn about the case study components in @sec-what-you-get.  
+**Methodology**: Understand the pedagogical approach in @sec-how-it-works.  
+**Licensing**: Review usage terms in @sec-license and citation format in @sec-citation.
+
+:::
+
+## Project Overview {#sec-overview}
+
+This is the **Cyber Dimensions Case Study Demo** demonstrating the artifact-based learning methodology developed for cybersecurity education, building on the theoretical framework from the [Cyber Dimensions OER Toolkit](https://github.com/ryanstraight/cyber-dimensions-oer) but stripped down to just one complete case study so you can see how the whole thing actually works without getting lost in the weeds. It's small, but complete.
+
+## What You Get {#sec-what-you-get}
+
+::: {.panel-tabset}
+
+### Overview
+
+The centerpiece is **CIRCUIT: The `r world$city_name` Power Grid Incident**, a complete case study that walks your students through a realistic cybersecurity incident involving critical infrastructure, stakeholder confusion, regulatory oversight, and all the messy human elements that make these situations so complicated in the real world.
+
+### Components
+
+- **[Introduction](circuit-intro.qmd)** gives you the pedagogical framework and posthuman cybersecurity theory.
+- **[Content](circuit-content.qmd)** contains six authentic artifacts that document how the incident unfolds.
+- **[Assignment](circuit-assignment.qmd)** provides the assessment framework with analysis questions designed to make students think beyond technical fixes.
+
+### Originality
+
+Here's what makes this (the application of the Cyber Dimensions framework) different from typical cybersecurity curricula: students work with SCADA logs, email threads, voice transcripts, regulatory filings, federal advisories, and media coverage—the actual documents people use when incidents happen. The assessment framework recognizes that cybersecurity emerges through networks of human and technological actors, not just individual expertise. Learning objectives focus on complex sociotechnical analysis rather than memorizing frameworks.
+
+:::
+
+## Getting It Running {#sec-getting-started}
+
+Clone this repository to your machine, install Quarto from [quarto.org](https://quarto.org) if you haven't already, and run `quarto render` to build everything. This will build the HTML files for the project website. Open `docs/index.html` to see the rendered case study. The whole process takes less than 10 seconds on most systems, which is what happens when you design things properly instead of trying to be clever with dependencies. 
+
+Note that the project comes pre-rendered, so you can go straight to the webpages if you like.
+
+Each page has a `<\>` icon at the top, which will provide you with the underlying Quarto markdown source. This is a great way to quickly view what's going on under the hood.
+
+## The Bigger Picture {#sec-bigger-picture}
+
+This project demonstrates just one case study using the comprehensive methodology I've documented in the full [Cyber Dimensions OER Toolkit](https://ryanstraight.github.io/cyber-dimensions-oer), the same approach used to build the entire [Cyber Dimensions]() textbook with much more comprehensive and complex case studies. The toolkit provides complete methodology documentation, templates for creating your own cases, a quality assurance frameworks, and technical implementation guides for anyone who wants to actually build these experiences.
+
+## How This Actually Works {#sec-how-it-works}
+
+Here's the thing about traditional cybersecurity education: it's mostly theoretical frameworks, coding simulations, compliance checklists, and sanitized case studies that miss the fundamental reality of how cybersecurity incidents actually unfold through complex networks of human actors, technological systems, organizational politics, and regulatory pressures. All of these interact in ways that can't be captured by teaching students to memorize the NIST Cybersecurity Framework. This approach is different.
+
+**Artifact-based learning** means students work with realistic documents instead of reading about incidents or requiring access to virtual environments. They examine SCADA logs. They read email threads between confused managers. They analyze regulatory filings and media coverage. **Multiple stakeholder perspectives** emerge naturally when you have technical staff reporting one thing while management says another. **Authentic complexity** develops as students trace how real-world incident progression involves coordination failures and response delays. **Posthuman assessment** recognizes that cybersecurity expertise is distributed across human and technological networks, not contained within individual minds.
+
+The trick is using deliberately crafted educational materials rather than authentic historical documents—I can target specific learning objectives without the ambiguity that derails student learning. The fictional artifacts guide students toward insights about infrastructure security and stakeholder coordination while maintaining enough complexity to feel real. Here, I'm using Google Gemini 2.5 (Imagen & Pro Preview TTS) to generate media components when needed.
+
+### Further Reading {#sec-references}
+
+::: {#refs}
+
+:::
+
+## License {#sec-license}
+
+![](https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-nc-sa.png){fig-alt="Creative Commons license button displaying the CC BY-NC-SA 4.0 license symbols in a horizontal arrangement with colored background sections"}
+
+This demo is released under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+::: {.callout-tip title="What is a CC BY-NC-SA License?"}
+
+#### You are free to:
+
+1. **Share **— copy and redistribute the material in any medium or format
+2. **Adapt **— remix, transform, and build upon the material
+3. The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+#### Under the following terms:
+
+1. **Attribution **— You must give [appropriate credit ](https://creativecommons.org/licenses/by-nc-sa/4.0/#ref-appropriate-credit), provide a link to the license, and [indicate if changes were made ](https://creativecommons.org/licenses/by-nc-sa/4.0/#ref-indicate-changes). You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+2. **NonCommercial **— You may not use the material for [commercial purposes ](https://creativecommons.org/licenses/by-nc-sa/4.0/#ref-commercial-purposes).
+3. **ShareAlike **— If you remix, transform, or build upon the material, you must distribute your contributions under the [same license ](https://creativecommons.org/licenses/by-nc-sa/4.0/#ref-same-license)as the original.
+4. **No additional restrictions **— You may not apply legal terms or [technological measures ](https://creativecommons.org/licenses/by-nc-sa/4.0/#ref-technological-measures)that legally restrict others from doing anything the license permits.
+
+#### Notices:
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable [exception or limitation ](https://creativecommons.org/licenses/by-nc-sa/4.0/#ref-exception-or-limitation).
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as [publicity, privacy, or moral rights ](https://creativecommons.org/licenses/by-nc-sa/4.0/#ref-publicity-privacy-or-moral-rights)may limit how you use the material.
+:::
+
+## Citation {#sec-citation}
+
+> Straight, R. M. (2025). Cyber Dimensions Case Study Demo. https://github.com/ryanstraight/cyber-dimensions-demo

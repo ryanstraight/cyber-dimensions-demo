@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="The assessment framework is designed to demonstrate sophisticated understanding of how cybersecurity emerges through assemblages while developing practical capabilities for analyzing and improving critical infrastructure protection in complex sociotechnical contexts.">
+
+<title>CIRCUIT: Assessment Framework – Cyber Dimensions Case Study Demo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46eeb4c476de49ef7df495821a6125d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-b989353551f6dac7ef77f7022ac690ef.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+div.callout-learner-experience.callout {
+  border-left-color: #8a7c6f;
+}
+div.callout-learner-experience.callout-style-default > .callout-header {
+  background-color: rgba(138, 124, 111, 0.13);
+}
+div.callout-learner-experience .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learner-experience.callout-style-default .callout-icon::before, div.callout-learner-experience.callout-titled .callout-icon::before {
+  content: '👤';
+  background-image: none;
+}
+div.callout-cognitive-load-alert.callout {
+  border-left-color: #a94442;
+}
+div.callout-cognitive-load-alert.callout-style-default > .callout-header {
+  background-color: rgba(169, 68, 66, 0.13);
+}
+div.callout-cognitive-load-alert .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-cognitive-load-alert.callout-style-default .callout-icon::before, div.callout-cognitive-load-alert.callout-titled .callout-icon::before {
+  content: '🧠';
+  background-image: none;
+}
+div.callout-evidence-base.callout {
+  border-left-color: #4a6e8a;
+}
+div.callout-evidence-base.callout-style-default > .callout-header {
+  background-color: rgba(74, 110, 138, 0.13);
+}
+div.callout-evidence-base .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-evidence-base.callout-style-default .callout-icon::before, div.callout-evidence-base.callout-titled .callout-icon::before {
+  content: '📊';
+  background-image: none;
+}
+div.callout-assessment-strategy.callout {
+  border-left-color: #c88a3f;
+}
+div.callout-assessment-strategy.callout-style-default > .callout-header {
+  background-color: rgba(200, 138, 63, 0.13);
+}
+div.callout-assessment-strategy .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-assessment-strategy.callout-style-default .callout-icon::before, div.callout-assessment-strategy.callout-titled .callout-icon::before {
+  content: '📋';
+  background-image: none;
+}
+div.callout-scaffolding-tip.callout {
+  border-left-color: #5a7d5a;
+}
+div.callout-scaffolding-tip.callout-style-default > .callout-header {
+  background-color: rgba(90, 125, 90, 0.13);
+}
+div.callout-scaffolding-tip .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-scaffolding-tip.callout-style-default .callout-icon::before, div.callout-scaffolding-tip.callout-titled .callout-icon::before {
+  content: '🏗️';
+  background-image: none;
+}
+div.callout-pedagogical-consideration.callout {
+  border-left-color: #4a6e8a;
+}
+div.callout-pedagogical-consideration.callout-style-default > .callout-header {
+  background-color: rgba(74, 110, 138, 0.13);
+}
+div.callout-pedagogical-consideration .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-pedagogical-consideration.callout-style-default .callout-icon::before, div.callout-pedagogical-consideration.callout-titled .callout-icon::before {
+  content: '🎓';
+  background-image: none;
+}
+div.callout-theoretical-foundation.callout {
+  border-left-color: #594a3d;
+}
+div.callout-theoretical-foundation.callout-style-default > .callout-header {
+  background-color: rgba(89, 74, 61, 0.13);
+}
+div.callout-theoretical-foundation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-theoretical-foundation.callout-style-default .callout-icon::before, div.callout-theoretical-foundation.callout-titled .callout-icon::before {
+  content: '🏛️';
+  background-image: none;
+}
+div.callout-implementation-guidance.callout {
+  border-left-color: #736355;
+}
+div.callout-implementation-guidance.callout-style-default > .callout-header {
+  background-color: rgba(115, 99, 85, 0.13);
+}
+div.callout-implementation-guidance .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-implementation-guidance.callout-style-default .callout-icon::before, div.callout-implementation-guidance.callout-titled .callout-icon::before {
+  content: '🔧';
+  background-image: none;
+}
+</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Cyber Dimensions Case Study Demo</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./circuit-intro.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./circuit-content.html"> 
+<span class="menu-text">Case Study Content</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./circuit-assignment.html" aria-current="page"> 
+<span class="menu-text">Assignment</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/ryanstraight/cyber-dimensions-oer"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">Cyber Dimensions Toolkit</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/ryanstraight/cyber-dimensions-demo"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">Demo Source</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#sec-assessment-overview" id="toc-sec-assessment-overview" class="nav-link active" data-scroll-target="#sec-assessment-overview">Assessment Overview</a></li>
+  <li><a href="#sec-prerequisites" id="toc-sec-prerequisites" class="nav-link" data-scroll-target="#sec-prerequisites">Prerequisites and Conceptual Framework</a>
+  <ul class="collapse">
+  <li><a href="#sec-prereq-check" id="toc-sec-prereq-check" class="nav-link" data-scroll-target="#sec-prereq-check">What You Need Before Starting</a></li>
+  <li><a href="#sec-technical-background" id="toc-sec-technical-background" class="nav-link" data-scroll-target="#sec-technical-background">Technical Background</a></li>
+  <li><a href="#sec-posthuman-concepts" id="toc-sec-posthuman-concepts" class="nav-link" data-scroll-target="#sec-posthuman-concepts">Posthuman Cybersecurity Concepts</a></li>
+  <li><a href="#sec-worked-example" id="toc-sec-worked-example" class="nav-link" data-scroll-target="#sec-worked-example">Worked Example: Posthuman Analysis of SCADA Logs</a></li>
+  <li><a href="#sec-learning-objectives" id="toc-sec-learning-objectives" class="nav-link" data-scroll-target="#sec-learning-objectives">Learning Objectives</a></li>
+  </ul></li>
+  <li><a href="#sec-distributed-agency" id="toc-sec-distributed-agency" class="nav-link" data-scroll-target="#sec-distributed-agency">Example I: Artifact Trace Analysis</a></li>
+  <li><a href="#sec-ethics-assessment" id="toc-sec-ethics-assessment" class="nav-link" data-scroll-target="#sec-ethics-assessment">Example II: Multi-Stakeholder Ethics Assessment</a></li>
+  <li><a href="#sec-response-strategy" id="toc-sec-response-strategy" class="nav-link" data-scroll-target="#sec-response-strategy">Example III: Assemblage-Informed Recommendations</a></li>
+  <li><a href="#sec-cross-case-connections" id="toc-sec-cross-case-connections" class="nav-link" data-scroll-target="#sec-cross-case-connections">Example IV: Cross-Case Connections, Methodological Transfer and Scaling</a></li>
+  <li><a href="#sec-assessment-rubric" id="toc-sec-assessment-rubric" class="nav-link" data-scroll-target="#sec-assessment-rubric">Assessment Rubric</a>
+  <ul class="collapse">
+  <li><a href="#sec-component-evaluation" id="toc-sec-component-evaluation" class="nav-link" data-scroll-target="#sec-component-evaluation">Individual Component Evaluation</a></li>
+  </ul></li>
+  <li><a href="#sec-submission-guidelines" id="toc-sec-submission-guidelines" class="nav-link" data-scroll-target="#sec-submission-guidelines">Submission Guidelines</a>
+  <ul class="collapse">
+  <li><a href="#sec-format-requirements" id="toc-sec-format-requirements" class="nav-link" data-scroll-target="#sec-format-requirements">Format Requirements</a></li>
+  <li><a href="#sec-citation-requirements" id="toc-sec-citation-requirements" class="nav-link" data-scroll-target="#sec-citation-requirements">Citation Requirements</a></li>
+  <li><a href="#sec-submission-process" id="toc-sec-submission-process" class="nav-link" data-scroll-target="#sec-submission-process">Submission Process</a></li>
+  </ul></li>
+  <li><a href="#sec-additional-resources" id="toc-sec-additional-resources" class="nav-link" data-scroll-target="#sec-additional-resources">Additional Resources</a>
+  <ul class="collapse">
+  <li><a href="#sec-posthuman-theory" id="toc-sec-posthuman-theory" class="nav-link" data-scroll-target="#sec-posthuman-theory">Posthuman Cybersecurity Theory</a></li>
+  <li><a href="#sec-technical-context" id="toc-sec-technical-context" class="nav-link" data-scroll-target="#sec-technical-context">Technical Cybersecurity Context</a></li>
+  <li><a href="#sec-progressive-scaffolding" id="toc-sec-progressive-scaffolding" class="nav-link" data-scroll-target="#sec-progressive-scaffolding">Progressive Learning Scaffolding</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">CIRCUIT: Assessment Framework</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i></button></div></div>
+</div>
+
+<div>
+  <div class="description">
+    The assessment framework is designed to demonstrate sophisticated understanding of how cybersecurity emerges through assemblages while developing practical capabilities for analyzing and improving critical infrastructure protection in complex sociotechnical contexts.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-assessment-overview" class="level2">
+<h2 class="anchored" data-anchor-id="sec-assessment-overview">Assessment Overview</h2>
+<p>This assessment framework employs <strong>posthuman cybersecurity analysis</strong> to examine the Ribera Municipal Utilities incident through analytic lenses that recognize distributed agency and relational responsibility while simultaneously tracing how temporal complexity manifests across multiple scales—from microsecond SCADA responses to decades-long infrastructure modernization cycles—revealing how cybersecurity emerges not through individual human decisions or isolated technological capabilities but through dynamic assemblages where humans, technologies, protocols, and institutions continuously negotiate threat landscapes. It’s about the networks. The framework deliberately refuses the artificial separation between social and technical domains that characterizes most cybersecurity education.</p>
+<div class="callout callout-style-simple callout-pedagogical-consideration callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Pedagogical-consideration</span>Customization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This framework serves as your starting point for the CIRCUIT demonstration case—adapt it ruthlessly to match your students’ developmental needs and institutional context.</p>
+</div>
+</div>
+</section>
+<section id="sec-prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="sec-prerequisites">Prerequisites and Conceptual Framework</h2>
+<section id="sec-prereq-check" class="level3">
+<h3 class="anchored" data-anchor-id="sec-prereq-check">What You Need Before Starting</h3>
+<p>Before engaging with this assessment framework, students should understand:</p>
+<ul>
+<li><strong>Basic cybersecurity concepts</strong>: Threat detection, incident response, vulnerability management</li>
+<li><strong>Industrial control systems fundamentals</strong>: SCADA, HMI, OT/IT networks (see <a href="#sec-technical-background" class="quarto-xref">Section&nbsp;2.2</a> for refresher)</li>
+<li><strong>Academic analysis skills</strong>: Close reading of technical documents, evidence-based argumentation</li>
+<li><strong>Critical theory foundations</strong>: Familiarity with questioning traditional assumptions about technology and society</li>
+</ul>
+<div class="callout callout-style-simple callout-cognitive-load-alert callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Cognitive-load-alert</span>Cognitive Load Management
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This assessment integrates multiple challenging domains simultaneously. If students seem to be struggling, focus first on understanding the technical artifacts (<a href="#sec-technical-background" class="quarto-xref">Section&nbsp;2.2</a>) before moving to posthuman theoretical applications. The worked example in <a href="#sec-worked-example" class="quarto-xref">Section&nbsp;2.4</a> demonstrates integration strategies.</p>
+</div>
+</div>
+</section>
+<section id="sec-technical-background" class="level3">
+<h3 class="anchored" data-anchor-id="sec-technical-background">Technical Background</h3>
+<p>To effectively analyze the CIRCUIT artifacts, you need familiarity with industrial control system architecture and cybersecurity practices in critical infrastructure contexts.</p>
+<p><strong>SCADA Systems</strong> (Supervisory Control and Data Acquisition) monitor and control industrial processes like power generation and distribution. These systems collect data from sensors across the infrastructure and allow operators to adjust settings remotely. Modern SCADA implementations integrate with business networks while maintaining operational isolation.</p>
+<p><strong>Human-Machine Interface (HMI)</strong> systems provide the graphical displays and controls that operators use to interact with SCADA systems. HMIs translate automated system data into human-readable formats and allow operators to override automated responses when necessary.</p>
+<p><strong>OT/IT Network Architecture</strong>: Operational Technology (OT) controls physical processes like opening circuit breakers or adjusting voltage levels. Information Technology (IT) manages data communications and business processes. Smart grid modernization increasingly integrates these previously separate domains.</p>
+<p><strong>Industrial Communication Protocols</strong>: Unlike standard internet protocols, industrial systems use specialized communications including Modbus (serial communication for device networking), DNP3 (power system automation), and EtherNet/IP (industrial Ethernet). These protocols prioritize reliability and deterministic timing over flexibility.</p>
+<p><strong>Smart Grid Infrastructure</strong> enhances traditional electrical systems with two-way digital communication capabilities. Smart meters, automated switching systems, and distributed energy resources create new capabilities for grid optimization—and new attack surfaces for cybersecurity threats.</p>
+</section>
+<section id="sec-posthuman-concepts" class="level3">
+<h3 class="anchored" data-anchor-id="sec-posthuman-concepts">Posthuman Cybersecurity Concepts</h3>
+<p>The assessment framework applies theoretical concepts that may be unfamiliar from traditional cybersecurity education. These concepts require careful application to avoid oversimplification.</p>
+<p><strong>Assemblages</strong> are heterogeneous networks of human actors, technological systems, protocols, and institutions that produce outcomes through their relationships rather than through individual capabilities. In cybersecurity contexts, security emerges from assemblage dynamics rather than from human decisions or technological features alone.</p>
+<p><em>Key insight</em>: Don’t think of assemblages as “teams” or “systems.” They’re dynamic networks that form and reform based on specific situations. The Ribera Municipal Utilities response assemblage included automated SCADA responses, human operator expertise, vendor support networks, regulatory compliance requirements, and federal coordination—all operating simultaneously.</p>
+<p><strong>Distributed Agency</strong> recognizes that both humans and non-human actors (technologies, protocols, institutions) participate actively in producing outcomes. This differs from treating technology as neutral tools that humans control or autonomous systems that replace human judgment.</p>
+<p><em>Key insight</em>: Look for moments where technological systems make decisions independently (automated threat isolation) AND where human expertise is essential (interpreting alerts within operational contexts). Agency distributes across these relationships rather than residing in individual actors.</p>
+<p><strong>Response-ability</strong> (Donna Haraway’s concept) refers to relational responsibility that emerges through network relationships rather than individual accountability. Response-ability involves the capacity to respond appropriately to others (human and non-human) within specific situations.</p>
+<p><em>Key insight</em>: Instead of asking “Who was responsible for security?” ask “How did different actors demonstrate response-ability to each other throughout the incident?” This shifts focus to relational ethics rather than individual blame.</p>
+<p><strong>Material-Semiotic Practices</strong> recognize that technical systems and meaning-making practices co-constitute each other. Technologies don’t just implement human intentions—they actively shape what becomes possible to think and do.</p>
+<p><em>Key insight</em>: Smart grid technologies don’t just make infrastructure “more efficient”—they transform what infrastructure governance means, who participates in it, and how cybersecurity gets practiced.</p>
+</section>
+<section id="sec-worked-example" class="level3">
+<h3 class="anchored" data-anchor-id="sec-worked-example">Worked Example: Posthuman Analysis of SCADA Logs</h3>
+<p>To demonstrate how posthuman concepts apply to technical cybersecurity artifacts, consider this brief analysis of SCADA alert patterns from the Ribera Municipal Utilities incident:</p>
+<p><strong>Traditional Analysis Approach</strong></p>
+<blockquote class="blockquote">
+<p>“At 14:23:07, the SCADA system detected unauthorized access attempts and alerted human operators, who then decided to isolate affected substations.”</p>
+</blockquote>
+<p><strong>Posthuman Analysis Approach</strong></p>
+<blockquote class="blockquote">
+<p>“The 14:23:07 SCADA alerts demonstrate distributed agency operating across human-technology assemblages. The automated systems didn’t simply ‘detect’ threats—they actively participated in threat assessment by correlating multiple sensor inputs, comparing patterns against baseline operations, and prioritizing alerts based on grid stability algorithms. Simultaneously, human operators David Kim and Maria Santos brought interpretive capabilities that allowed them to contextualize these alerts within broader operational knowledge, including understanding of equipment maintenance schedules and regional load patterns that automated systems couldn’t access.</p>
+<p>The isolation response emerged through assemblage coordination rather than individual decision-making. Automated protocols initiated preliminary isolation procedures based on threat severity algorithms, while human expertise guided selective overrides to maintain power delivery to critical services like . Neither humans nor technologies could have achieved effective threat containment independently—security emerged through their relational coordination.”</p>
+</blockquote>
+<p><strong>Key Differences</strong>:</p>
+<ul>
+<li>Moves from sequential causation (system detects → human decides → action happens) to relational emergence</li>
+<li>Recognizes both automated and human contributions without privileging either</li>
+<li>Shows how security outcomes emerge from assemblage coordination rather than individual capabilities</li>
+<li>Avoids both techno-solutionism (“better systems solve problems”) and anthropocentrism (“humans control technology”)</li>
+</ul>
+<div class="callout callout-style-simple callout-scaffolding-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Scaffolding-tip</span>Applying This Approach
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When analyzing artifacts, look for moments where:</p>
+<ol type="1">
+<li><strong>Multiple actors contribute simultaneously</strong> to outcomes</li>
+<li><strong>Technologies make independent decisions</strong> that shape what becomes possible</li>
+<li><strong>Human expertise complements rather than controls</strong> technological capabilities<br>
+</li>
+<li><strong>Coordination emerges dynamically</strong> rather than following predetermined procedures</li>
+<li><strong>Responsibility distributes across networks</strong> rather than residing in individuals</li>
+</ol>
+<p>Use specific artifact evidence to demonstrate these dynamics rather than simply asserting they exist.</p>
+</div>
+</div>
+</section>
+<section id="sec-learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="sec-learning-objectives">Learning Objectives</h3>
+<p>Through this engagement with posthuman cybersecurity methodology, students develop competencies that extend beyond traditional human-centered or technology-focused approaches to infrastructure protection, demonstrating sophisticated understanding of how agency distributes across sociotechnical networks while simultaneously developing practical capabilities for analyzing multi-stakeholder coordination challenges that emerge during critical incidents. Students will:</p>
+<ol type="1">
+<li><p><strong>Trace distributed agency patterns</strong> across automated systems, human expertise, and organizational protocols during critical infrastructure incidents</p></li>
+<li><p><strong>Map multi-stakeholder coordination networks</strong> as they form and evolve across municipal, vendor, regulatory, and federal response domains</p></li>
+<li><p><strong>Apply posthuman ethics frameworks</strong> to responsibility distribution in complex sociotechnical systems. This means abandoning individual blame.</p></li>
+<li><p><strong>Design response strategies</strong> that work with assemblages rather than treating technology as neutral tool</p></li>
+<li><p><strong>Analyze technical communication and media mediation</strong> by examining how cybersecurity incidents become transformed through tech journalism practices and public discourse formation</p></li>
+</ol>
+</section>
+</section>
+<section id="sec-distributed-agency" class="level2">
+<h2 class="anchored" data-anchor-id="sec-distributed-agency">Example I: Artifact Trace Analysis</h2>
+<p>Using the complete artifact collection, trace how agency distributes across human and non-human actors throughout the incident—examining not just what people decided or what technologies accomplished, but how cybersecurity outcomes emerged through the dynamic interactions between SCADA systems, human operators, organizational protocols, regulatory frameworks, and communication infrastructures that collectively constitute the response assemblage. This isn’t about cataloging actors. This approach recognizes that cybersecurity effectiveness materializes through relationships rather than individual capabilities.</p>
+<p><strong>Enhanced Analysis Note</strong>: During development of this methodology, I discovered that GRID WIRE’s journalistic representation itself demonstrates distributed agency operating between technical experts, journalists, and emerging public understanding. Pay attention to how cyberpunk narrative elements like “The Grid Fought Back” actively shape perception of technological agency rather than simply reflecting it.</p>
+<div class="callout callout-style-simple callout-assessment-strategy callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Assessment-strategy</span>Distributed Agency Recognition
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Analysis Framework</strong>:</p>
+<ol type="1">
+<li>Technological Agency Documentation
+<ul>
+<li><strong>SCADA System Actions</strong>: How did automated systems participate in threat detection and response coordination? What actions did systems take independently of human operators?</li>
+<li><strong>Smart Grid Infrastructure</strong>: How did smart meter networks and communication protocols shape both vulnerability patterns and protective capabilities?</li>
+<li><strong>Network Segmentation</strong>: How did automated isolation protocols participate in containing the threat while maintaining grid operations?</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Evidence Needed</strong>: Ground your analysis in specific artifact content—alert logs, email exchanges, regulatory filings—that reveals technological agency operating beyond simple tool use. Look for moments where systems act.</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Human-Technology Coordination
+<ul>
+<li><strong>Operational Expertise</strong>: How did David Kim and Maria Santos work symbiotically with technological systems throughout the incident?</li>
+<li><strong>Interpretive Capabilities</strong>: Where did human expertise complement technological capabilities in threat assessment and response coordination?</li>
+<li><strong>Multi-Domain Knowledge</strong>: How did human operators translate between technological alerts and organizational/regulatory requirements?</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Evidence Needed</strong>: Document those crucial moments where human expertise and technological capabilities worked symbiotically to produce outcomes neither could achieve independently—this is where posthuman approaches become practically visible in cybersecurity work.</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Assemblage Formation Analysis
+<ul>
+<li><strong>Network Mobilization</strong>: How did different organizations (RMU, Phoenix Edison, ACC, DHS) form a coordinated response network?</li>
+<li><strong>Infrastructure Relationships</strong>: What role did both human relationships and technological infrastructures play in enabling rapid multi-stakeholder coordination?</li>
+<li><strong>Temporal Dynamics</strong>: How did the assemblage evolve over the 72-hour incident period?</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Evidence Needed</strong>: Map the formation and evolution of response networks through artifact analysis. Show how assemblages emerge dynamically. They don’t exist as fixed organizational structures waiting to be activated—they coalesce through the incident itself.</p>
+</blockquote>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<p><strong>Format</strong>: 1,500-2,000 words with specific artifact citations</p>
+<p><strong>Evaluation Criteria</strong></p>
+<ul>
+<li><strong>Conceptual Understanding</strong>: Demonstrates comprehension of distributed agency as distinct from individual human or technological action</li>
+<li><strong>Evidence Integration</strong>: Uses specific artifact details to support analysis rather than general observations<br>
+</li>
+<li><strong>Assemblage Mapping</strong>: Shows how networks of actors (human and non-human) formed dynamically in response to the incident</li>
+<li><strong>Critical Analysis</strong>: Goes beyond description to analyze how distributed agency shaped cybersecurity outcomes</li>
+</ul>
+</section>
+<section id="sec-ethics-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="sec-ethics-assessment">Example II: Multi-Stakeholder Ethics Assessment</h2>
+<p>This analysis examines how responsibility for critical infrastructure protection distributes across stakeholder networks while revealing how ethical obligations emerge through relationships rather than residing in individual decisions or organizational mandates—a fundamentally different approach to cybersecurity ethics that recognizes accountability as relational achievement rather than individual possession. Responsibility is networked. The framework draws from feminist science and technology studies to understand how “response-ability” operates across human-technology assemblages rather than being contained within traditional organizational boundaries.</p>
+<p><strong>Enhanced Analysis Note</strong>: The GRID WIRE coverage reveals fascinating tensions between journalist ethics in reporting critical infrastructure vulnerabilities and operational security requirements—tensions that themselves demonstrate how ethical obligations emerge relationally rather than through individual professional codes.</p>
+<div class="callout callout-style-simple callout-implementation-guidance callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Implementation-guidance</span>Response-ability in Infrastructure Security
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Ethical Framework Application</strong>:</p>
+<ol type="1">
+<li>Multi-Actor Accountability Analysis
+<ul>
+<li><strong>Responsibility Distribution</strong>: Based on the artifacts, how should accountability for infrastructure protection be distributed among automated systems, human operators, vendor support, and regulatory oversight?</li>
+<li><strong>Relational Ethics</strong>: How do ethical obligations emerge through relationships between stakeholders rather than existing as individual responsibilities?</li>
+<li><strong>Response-ability</strong>: Using Donna Haraway’s concept of “response-ability,” analyze how stakeholders demonstrated the ability to respond to each other and to technological systems during the incident.</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Evidence Needed</strong>: Use specific artifact examples to demonstrate how responsibility operates across networks. Individual actors don’t “have” responsibility—they participate in responsibility networks.</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Temporal Ethics Assessment
+<ul>
+<li><strong>Future-Making</strong>: What obligations emerge from this incident for future infrastructure development? How do current technological choices affect future vulnerability and protection possibilities?</li>
+<li><strong>Intergenerational Responsibility</strong>: How does smart grid modernization create both opportunities and obligations for future community security?</li>
+<li><strong>Anticipatory Ethics</strong>: How should the response to this incident shape proactive measures for emerging threats not yet imagined?</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Evidence Needed</strong>: Connect artifact evidence to broader questions about how present decisions actively shape future possibilities for both vulnerability and protection—this is where posthuman approaches reveal their practical implications for cybersecurity policy.</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Community Care Analysis
+<ul>
+<li><strong>Care Networks</strong>: How did different stakeholders demonstrate care for community welfare throughout the incident? Consider utility workers, city officials, federal agencies, and media coverage.</li>
+<li><strong>Situated Ethics</strong>: How did specific local contexts (municipal utility, Arizona regulatory environment, federal coordination) shape ethical responses?</li>
+<li><strong>Public Engagement</strong>: Evaluate the media coverage and community advocacy response through frameworks of care ethics and public accountability.</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Evidence Needed</strong>: Analyze artifact evidence for demonstrations of care that extend beyond formal compliance. Look for care practices that exceed professional obligations—these reveal how ethical responses emerge through relationships rather than rules.</p>
+</blockquote>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<p><strong>Format</strong>: 1,500-2,000 words with theoretical framework integration</p>
+<p><strong>Evaluation Criteria</strong></p>
+<ul>
+<li><strong>Theoretical Application</strong>: Effectively applies posthuman ethics concepts to infrastructure cybersecurity context</li>
+<li><strong>Relational Analysis</strong>: Demonstrates understanding of how ethical obligations emerge through relationships rather than individual decisions</li>
+<li><strong>Community Context</strong>: Connects cybersecurity incident to broader questions of community care and public welfare</li>
+<li><strong>Future Orientation</strong>: Considers how current decisions shape future possibilities and responsibilities</li>
+</ul>
+</section>
+<section id="sec-response-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="sec-response-strategy">Example III: Assemblage-Informed Recommendations</h2>
+<p>Develop evidence-based recommendations for improving critical infrastructure cybersecurity that work with assemblages rather than against them—recognizing that effective security emerges through enhanced human-technology coordination rather than through better human control over technological systems or more sophisticated technological replacement of human judgment. Security is relational. Your recommendations should demonstrate understanding of how to design interventions that strengthen assemblage formation rather than optimizing individual components in isolation.</p>
+<p><strong>Enhanced Analysis Note</strong>: Communication strategies for translating technical incidents into public policy discussions themselves participate in cybersecurity assemblages by shaping how communities understand infrastructure vulnerabilities and protection possibilities. Assess how media framing actively influences public support for infrastructure cybersecurity investments rather than simply reflecting technical realities.</p>
+<div class="callout callout-style-simple callout-learner-experience callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Learner-experience</span>Posthuman Cybersecurity Strategy
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Strategy Development Framework</strong>:</p>
+<ol type="1">
+<li>Human-Technology Integration Enhancement
+<ul>
+<li><strong>Symbiotic Coordination</strong>: Based on incident analysis, recommend specific improvements to human-technology coordination in cybersecurity monitoring and response</li>
+<li><strong>Expertise Distribution</strong>: How should technical knowledge be distributed across human operators and automated systems to optimize threat detection and response?</li>
+<li><strong>Training Integration</strong>: What forms of education and training would enhance human-technology collaboration demonstrated in the incident?</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Requirements</strong>: Ground recommendations in specific incident evidence. Demonstrate understanding of posthuman approaches to technology design—this means designing for assemblages rather than users.</p>
+</blockquote>
+<ol start="2" type="1">
+<li>Multi-Stakeholder Network Strengthening
+<ul>
+<li><strong>Assemblage Optimization</strong>: Recommend improvements to coordination mechanisms between municipal utilities, vendor support, regulatory oversight, and federal resources</li>
+<li><strong>Information Sharing</strong>: How should threat intelligence and response coordination be enhanced across organizational boundaries?</li>
+<li><strong>Preparedness Integration</strong>: What forms of multi-stakeholder preparedness would strengthen the assemblages demonstrated during the incident?</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Requirements</strong>: Address both technical and relational dimensions of network coordination through artifact evidence. Technical improvements and relational improvements are not separate—they co-evolve through assemblage dynamics.</p>
+</blockquote>
+<ol start="3" type="1">
+<li>Community Resilience Planning
+<ul>
+<li><strong>Public Engagement</strong>: Recommend approaches to community engagement about critical infrastructure cybersecurity that balance transparency with security requirements</li>
+<li><strong>Democratic Oversight</strong>: How should communities participate in decisions about cybersecurity investments and risk management for critical infrastructure?</li>
+<li><strong>Resilience Building</strong>: What forms of community preparedness would complement the technical and organizational measures demonstrated in the incident?</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Requirements</strong>: Connect cybersecurity strategy to broader questions about community resilience and democratic governance. Infrastructure cybersecurity is always already political—recognize this explicitly rather than treating it as technical optimization problem.</p>
+</blockquote>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<p><strong>Format</strong>: 1,500-2,000 words with specific, implementable recommendations</p>
+<p><strong>Evaluation Criteria</strong></p>
+<ul>
+<li><strong>Evidence-Based</strong>: Recommendations clearly connected to incident analysis and artifact evidence</li>
+<li><strong>Posthuman Integration</strong>: Demonstrates understanding of how to design strategies that work with assemblages rather than treating technology as neutral tool</li>
+<li><strong>Implementation Feasibility</strong>: Recommendations are specific and implementable within realistic resource and regulatory constraints</li>
+<li><strong>Community Context</strong>: Addresses broader questions of democratic governance and community resilience</li>
+</ul>
+</section>
+<section id="sec-cross-case-connections" class="level2">
+<h2 class="anchored" data-anchor-id="sec-cross-case-connections">Example IV: Cross-Case Connections, Methodological Transfer and Scaling</h2>
+<p>Connect the Ribera Municipal Utilities incident to broader patterns emerging across critical infrastructure cybersecurity contexts while identifying opportunities for methodological transfer that recognizes both sectoral specificities and cross-domain assemblage dynamics—understanding how posthuman approaches scale across different infrastructure contexts without losing attention to local sociotechnical relationships and community contexts. Pattern recognition here isn’t about finding universal solutions. It’s about understanding how assemblage dynamics operate across different technological and social configurations.</p>
+<div class="callout callout-style-simple callout-scaffolding-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Scaffolding-tip</span>Assemblage Patterns Across Infrastructure Sectors
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Connection Development</strong>:</p>
+<ol type="1">
+<li>Sectoral Pattern Recognition
+<ul>
+<li><strong>Infrastructure Similarities</strong>: How do the assemblage dynamics observed in the municipal utility incident connect to cybersecurity challenges in other critical infrastructure sectors (healthcare, financial services, transportation)?</li>
+<li><strong>Technology Patterns</strong>: What similarities exist between smart grid technologies and other infrastructure modernization projects in terms of creating new assemblage relationships?</li>
+</ul></li>
+<li>Methodological Transfer
+<ul>
+<li><strong>Assessment Framework</strong>: How could the posthuman analysis framework applied to this incident be adapted for other infrastructure cybersecurity contexts?</li>
+<li><strong>Artifact-Based Learning</strong>: What types of authentic artifacts from other sectors would provide similar learning opportunities about distributed agency and multi-stakeholder coordination?</li>
+</ul></li>
+<li>Scaling Considerations
+<ul>
+<li><strong>Regional Coordination</strong>: How might the multi-stakeholder coordination demonstrated in this local incident scale to regional or national infrastructure protection?</li>
+<li><strong>Policy Implications</strong>: What policy changes would better support the assemblage-based approaches to cybersecurity demonstrated in the incident response?</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+<p><strong>Format</strong>: 750-1,000 words</p>
+<p><strong>Evaluation Criteria</strong></p>
+<ul>
+<li><strong>Pattern Recognition</strong>: Identifies meaningful connections across infrastructure sectors and cybersecurity contexts</li>
+<li><strong>Methodological Sophistication</strong>: Demonstrates understanding of how posthuman approaches can be adapted across contexts</li>
+<li><strong>Policy Integration</strong>: Connects analysis to broader policy and governance questions</li>
+</ul>
+</section>
+<section id="sec-assessment-rubric" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sec-assessment-rubric">Assessment Rubric</h2>
+<p>The comprehensive evaluation criteria shown in <a href="#tbl-rubric" class="quarto-xref">Table&nbsp;1</a> provides a 100-point assessment framework that evaluates student understanding across four dimensions—conceptual understanding, evidence use, critical analysis, and media analysis—while recognizing that excellence emerges through integration rather than component optimization. Assessment here mirrors the theoretical framework. Students demonstrate sophistication through relational analysis rather than individual mastery of discrete skills.</p>
+<div class="column-page">
+<div id="tbl-rubric" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rubric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Assessment Rubric
+</figcaption>
+<div aria-describedby="tbl-rubric-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 27%">
+<col style="width: 14%">
+<col style="width: 20%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Performance Level</th>
+<th style="text-align: left;">Conceptual Understanding</th>
+<th style="text-align: left;">Evidence Use</th>
+<th style="text-align: left;">Critical Analysis</th>
+<th style="text-align: left;">Media Analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Excellent</strong><br>90-100 points</td>
+<td style="text-align: left;">Sophisticated understanding of posthuman cybersecurity concepts and their application to infrastructure contexts</td>
+<td style="text-align: left;">Extensive use of artifact evidence to support analysis and recommendations</td>
+<td style="text-align: left;">Original insights that go beyond course material to develop new connections and applications</td>
+<td style="text-align: left;">Demonstrates understanding of how tech journalism conventions shape technical content reception and public discourse</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Proficient</strong><br>80-89 points</td>
+<td style="text-align: left;">Good understanding of posthuman concepts with appropriate application to case study context</td>
+<td style="text-align: left;">Adequate use of artifact evidence with some specific examples supporting analysis</td>
+<td style="text-align: left;">Some original insights connecting course concepts to case study evidence</td>
+<td style="text-align: left;">Shows awareness of media framing effects on cybersecurity discourse</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Developing</strong><br>70-79 points</td>
+<td style="text-align: left;">Basic understanding of posthuman concepts with limited application to cybersecurity context</td>
+<td style="text-align: left;">General use of case study material with few specific artifact citations</td>
+<td style="text-align: left;">Limited original insights, primarily restating course concepts</td>
+<td style="text-align: left;">Basic recognition of journalism vs.&nbsp;technical documentation differences</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Inadequate</strong><br>Below 70 points</td>
+<td style="text-align: left;">Minimal understanding of posthuman concepts or failure to connect to cybersecurity context</td>
+<td style="text-align: left;">Little use of specific case study evidence or artifact material</td>
+<td style="text-align: left;">No original insights or critical analysis beyond basic summary</td>
+<td style="text-align: left;">No analysis of media representation impacts on cybersecurity discourse</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+<section id="sec-component-evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-component-evaluation">Individual Component Evaluation</h3>
+<p>Each major component (Examples I-IV) includes specific evaluation criteria that work together to assess students’ developing competency in posthuman cybersecurity analysis—recognizing that success emerges through integrated understanding rather than sequential skill acquisition. Success requires:</p>
+<ul>
+<li><strong>Conceptual Integration</strong>: Effective use of posthuman theory to analyze cybersecurity assemblages as they actually operate rather than as they should operate according to organizational charts</li>
+<li><strong>Evidence Application</strong>: Specific citation and analysis of artifact content to support arguments rather than general theoretical application</li>
+<li><strong>Critical Analysis</strong>: Development of original insights that go beyond summarizing provided materials to reveal new connections and implications</li>
+<li><strong>Implementation Orientation</strong>: Recommendations that demonstrate practical understanding of complex sociotechnical systems. Avoid techno-solutionism.</li>
+<li><strong>Cross-Artifact Synthesis</strong>: Integration between technical logs and media coverage analysis that reveals their mutual constitution rather than treating them as separate domains</li>
+<li><strong>Media Literacy Demonstration</strong>: Critical assessment of how journalist interpretation practices actively shape rather than simply report cybersecurity incidents</li>
+</ul>
+</section>
+</section>
+<section id="sec-submission-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="sec-submission-guidelines">Submission Guidelines</h2>
+<div class="callout callout-style-simple callout-implementation-guidance callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Implementation-guidance</span>Example Submission
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is simply a sample of how one might assign <em>all</em> the examples above.</p>
+</div>
+</div>
+<section id="sec-format-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="sec-format-requirements">Format Requirements</h3>
+<ul>
+<li><strong>Length</strong>: 5,000-6,500 words total across all components—substantial enough for sophisticated analysis without encouraging word padding</li>
+<li><strong>Citations</strong>: Specific references to case study artifacts integrated with course theoretical materials rather than applied to them</li>
+<li><strong>Organization</strong>: Clear section headers corresponding to assessment framework components while maintaining analytical flow across sections</li>
+<li><strong>Academic Writing</strong>: Graduate-level analysis that uses cybersecurity and posthuman theoretical vocabulary precisely rather than impressively</li>
+</ul>
+</section>
+<section id="sec-citation-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="sec-citation-requirements">Citation Requirements</h3>
+<p><strong>Case Study Artifacts</strong>: Cite specific documents, email excerpts, technical logs, etc. using format:</p>
+<blockquote class="blockquote">
+<p>“Based on the SCADA alert logs, automated systems detected…” (CIRCUIT: SCADA System Alert Log)</p>
+</blockquote>
+<p><strong>Theoretical Integration</strong>: Connect analysis to course readings on posthuman ethics, assemblage theory, and critical cybersecurity studies</p>
+<p><strong>External Sources</strong>: Additional sources welcome but not required; focus on deep analysis of provided case study materials</p>
+</section>
+<section id="sec-submission-process" class="level3">
+<h3 class="anchored" data-anchor-id="sec-submission-process">Submission Process</h3>
+<p>Submit via course learning management system by [date to be specified by instructor]. Include:</p>
+<ul>
+<li>Complete analysis document (PDF or DOCX)</li>
+<li>Brief reflection memo (500 words) discussing what you learned about posthuman approaches to cybersecurity through engaging with the artifact-based methodology</li>
+</ul>
+</section>
+</section>
+<section id="sec-additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="sec-additional-resources">Additional Resources</h2>
+<section id="sec-posthuman-theory" class="level3">
+<h3 class="anchored" data-anchor-id="sec-posthuman-theory">Posthuman Cybersecurity Theory</h3>
+<p>Key concepts for assessment framework application:</p>
+<ul>
+<li><strong>Assemblage Theory</strong>: Deleuze and Guattari’s concept of heterogeneous networks producing outcomes through relationships</li>
+<li><strong>Actor-Network Theory</strong>: Bruno Latour’s approach to analyzing how humans and non-humans participate in network formation</li>
+<li><strong>Postphenomenological Ethics</strong>: Don Ihde and Peter-Paul Verbeek’s analysis of how technologies mediate human relationships</li>
+<li><strong>Response-ability</strong>: Donna Haraway’s concept of relational responsibility and care across networks</li>
+<li><strong>Critical Infrastructure Studies</strong>: Analysis of how technical systems and social relationships co-constitute security outcomes</li>
+</ul>
+</section>
+<section id="sec-technical-context" class="level3">
+<h3 class="anchored" data-anchor-id="sec-technical-context">Technical Cybersecurity Context</h3>
+<p>For students needing additional technical background:</p>
+<ul>
+<li><strong>SCADA Systems</strong>: Supervisory control and data acquisition systems for industrial process monitoring and control</li>
+<li><strong>Industrial Protocols</strong>: Communication standards (Modbus, DNP3, EtherNet/IP) used in operational technology networks</li>
+<li><strong>Smart Grid Architecture</strong>: Integration of digital communication and control capabilities with traditional electrical infrastructure<br>
+</li>
+<li><strong>OT/IT Convergence</strong>: Operational technology and information technology integration creating new attack surfaces and defensive capabilities</li>
+<li><strong>Critical Infrastructure Protection</strong>: Multi-stakeholder approaches to securing essential services and systems</li>
+</ul>
+</section>
+<section id="sec-progressive-scaffolding" class="level3">
+<h3 class="anchored" data-anchor-id="sec-progressive-scaffolding">Progressive Learning Scaffolding</h3>
+<p><strong>Cognitive Load Management Strategy</strong>:</p>
+<ul>
+<li><strong>Stage 1</strong>: Technical Artifact Analysis
+<ul>
+<li>Focus on understanding SCADA logs, email exchanges, and regulatory filings</li>
+<li>Use provided <strong>artifact navigation guide</strong> for key technical concepts</li>
+<li>Complete Part I analysis before moving to media components</li>
+</ul></li>
+<li><strong>Stage 2</strong>: Media Representation Analysis
+<ul>
+<li>Apply <strong>media analysis framework</strong> for systematic journalism evaluation</li>
+<li>Compare GRID WIRE coverage with technical artifacts</li>
+<li>Identify differences between technical accuracy and public engagement</li>
+</ul></li>
+<li><strong>Stage 3</strong>: Integrated Synthesis
+<ul>
+<li>Use <strong>synthesis templates</strong> for connecting technical and narrative elements</li>
+<li>Complete cross-modal analysis and policy implications</li>
+<li>Integrate all components into final submission</li>
+</ul></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "CIRCUIT: Assessment Framework"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "The assessment framework is designed to demonstrate sophisticated understanding of how cybersecurity emerges through assemblages while developing practical capabilities for analyzing and improving critical infrastructure protection in complex sociotechnical contexts."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># This chunk allows for single-file rendering for development</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"_scripts/solo_render.R"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assessment Overview {#sec-assessment-overview}</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>This assessment framework employs **posthuman cybersecurity analysis** to examine the <span class="in">`r world$utility_name`</span> incident through analytic lenses that recognize distributed agency and relational responsibility while simultaneously tracing how temporal complexity manifests across multiple scales—from microsecond SCADA responses to decades-long infrastructure modernization cycles—revealing how cybersecurity emerges not through individual human decisions or isolated technological capabilities but through dynamic assemblages where humans, technologies, protocols, and institutions continuously negotiate threat landscapes. It's about the networks. The framework deliberately refuses the artificial separation between social and technical domains that characterizes most cybersecurity education.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>::: {.pedagogical-consideration title="Customization"}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>This framework serves as your starting point for the CIRCUIT demonstration case—adapt it ruthlessly to match your students' developmental needs and institutional context.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prerequisites and Conceptual Framework {#sec-prerequisites}</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### What You Need Before Starting {#sec-prereq-check}</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Before engaging with this assessment framework, students should understand:</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Basic cybersecurity concepts**: Threat detection, incident response, vulnerability management</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Industrial control systems fundamentals**: SCADA, HMI, OT/IT networks (see @sec-technical-background for refresher)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Academic analysis skills**: Close reading of technical documents, evidence-based argumentation</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Critical theory foundations**: Familiarity with questioning traditional assumptions about technology and society</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>::: {.cognitive-load-alert title="Cognitive Load Management"}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>This assessment integrates multiple challenging domains simultaneously. If students seem to be struggling, focus first on understanding the technical artifacts (@sec-technical-background) before moving to posthuman theoretical applications. The worked example in @sec-worked-example demonstrates integration strategies.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### Technical Background {#sec-technical-background}</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>To effectively analyze the CIRCUIT artifacts, you need familiarity with industrial control system architecture and cybersecurity practices in critical infrastructure contexts.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>**SCADA Systems** (Supervisory Control and Data Acquisition) monitor and control industrial processes like power generation and distribution. These systems collect data from sensors across the infrastructure and allow operators to adjust settings remotely. Modern SCADA implementations integrate with business networks while maintaining operational isolation.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>**Human-Machine Interface (HMI)** systems provide the graphical displays and controls that operators use to interact with SCADA systems. HMIs translate automated system data into human-readable formats and allow operators to override automated responses when necessary.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>**OT/IT Network Architecture**: Operational Technology (OT) controls physical processes like opening circuit breakers or adjusting voltage levels. Information Technology (IT) manages data communications and business processes. Smart grid modernization increasingly integrates these previously separate domains.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>**Industrial Communication Protocols**: Unlike standard internet protocols, industrial systems use specialized communications including Modbus (serial communication for device networking), DNP3 (power system automation), and EtherNet/IP (industrial Ethernet). These protocols prioritize reliability and deterministic timing over flexibility.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>**Smart Grid Infrastructure** enhances traditional electrical systems with two-way digital communication capabilities. Smart meters, automated switching systems, and distributed energy resources create new capabilities for grid optimization—and new attack surfaces for cybersecurity threats.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### Posthuman Cybersecurity Concepts {#sec-posthuman-concepts}</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>The assessment framework applies theoretical concepts that may be unfamiliar from traditional cybersecurity education. These concepts require careful application to avoid oversimplification.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>**Assemblages** are heterogeneous networks of human actors, technological systems, protocols, and institutions that produce outcomes through their relationships rather than through individual capabilities. In cybersecurity contexts, security emerges from assemblage dynamics rather than from human decisions or technological features alone.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>*Key insight*: Don't think of assemblages as "teams" or "systems." They're dynamic networks that form and reform based on specific situations. The <span class="in">`r world$utility_name`</span> response assemblage included automated SCADA responses, human operator expertise, vendor support networks, regulatory compliance requirements, and federal coordination—all operating simultaneously.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>**Distributed Agency** recognizes that both humans and non-human actors (technologies, protocols, institutions) participate actively in producing outcomes. This differs from treating technology as neutral tools that humans control or autonomous systems that replace human judgment.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>*Key insight*: Look for moments where technological systems make decisions independently (automated threat isolation) AND where human expertise is essential (interpreting alerts within operational contexts). Agency distributes across these relationships rather than residing in individual actors.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>**Response-ability** (Donna Haraway's concept) refers to relational responsibility that emerges through network relationships rather than individual accountability. Response-ability involves the capacity to respond appropriately to others (human and non-human) within specific situations.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>*Key insight*: Instead of asking "Who was responsible for security?" ask "How did different actors demonstrate response-ability to each other throughout the incident?" This shifts focus to relational ethics rather than individual blame.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>**Material-Semiotic Practices** recognize that technical systems and meaning-making practices co-constitute each other. Technologies don't just implement human intentions—they actively shape what becomes possible to think and do.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>*Key insight*: Smart grid technologies don't just make infrastructure "more efficient"—they transform what infrastructure governance means, who participates in it, and how cybersecurity gets practiced.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">### Worked Example: Posthuman Analysis of SCADA Logs {#sec-worked-example}</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>To demonstrate how posthuman concepts apply to technical cybersecurity artifacts, consider this brief analysis of SCADA alert patterns from the <span class="in">`r world$utility_name`</span> incident:</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>**Traditional Analysis Approach**</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "At 14</span><span class="sc">:23:</span><span class="at">07, the SCADA system detected unauthorized access attempts and alerted human operators, who then decided to isolate affected substations."</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>**Posthuman Analysis Approach**</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "The 14</span><span class="sc">:23:</span><span class="at">07 SCADA alerts demonstrate distributed agency operating across human-technology assemblages. The automated systems didn't simply 'detect' threats—they actively participated in threat assessment by correlating multiple sensor inputs, comparing patterns against baseline operations, and prioritizing alerts based on grid stability algorithms. Simultaneously, human operators </span><span class="in">`r world$power_operator_fullname`</span><span class="at"> and </span><span class="in">`r world$it_manager_fullname`</span><span class="at"> brought interpretive capabilities that allowed them to contextualize these alerts within broader operational knowledge, including understanding of equipment maintenance schedules and regional load patterns that automated systems couldn't access.</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; The isolation response emerged through assemblage coordination rather than individual decision-making. Automated protocols initiated preliminary isolation procedures based on threat severity algorithms, while human expertise guided selective overrides to maintain power delivery to critical services like </span><span class="in">`r world$hospital_name`</span><span class="at">. Neither humans nor technologies could have achieved effective threat containment independently—security emerged through their relational coordination."</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>**Key Differences**:</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Moves from sequential causation (system detects → human decides → action happens) to relational emergence</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Recognizes both automated and human contributions without privileging either</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Shows how security outcomes emerge from assemblage coordination rather than individual capabilities</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Avoids both techno-solutionism ("better systems solve problems") and anthropocentrism ("humans control technology")</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>::: {.scaffolding-tip title="Applying This Approach"}</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>When analyzing artifacts, look for moments where:</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Multiple actors contribute simultaneously** to outcomes</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Technologies make independent decisions** that shape what becomes possible</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Human expertise complements rather than controls** technological capabilities  </span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Coordination emerges dynamically** rather than following predetermined procedures</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Responsibility distributes across networks** rather than residing in individuals</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Use specific artifact evidence to demonstrate these dynamics rather than simply asserting they exist.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="fu">### Learning Objectives {#sec-learning-objectives}</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>Through this engagement with posthuman cybersecurity methodology, students develop competencies that extend beyond traditional human-centered or technology-focused approaches to infrastructure protection, demonstrating sophisticated understanding of how agency distributes across sociotechnical networks while simultaneously developing practical capabilities for analyzing multi-stakeholder coordination challenges that emerge during critical incidents. Students will:</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Trace distributed agency patterns** across automated systems, human expertise, and organizational protocols during critical infrastructure incidents</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Map multi-stakeholder coordination networks** as they form and evolve across municipal, vendor, regulatory, and federal response domains</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Apply posthuman ethics frameworks** to responsibility distribution in complex sociotechnical systems. This means abandoning individual blame.</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Design response strategies** that work with assemblages rather than treating technology as neutral tool</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Analyze technical communication and media mediation** by examining how cybersecurity incidents become transformed through tech journalism practices and public discourse formation</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example I: Artifact Trace Analysis {#sec-distributed-agency}</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>Using the complete artifact collection, trace how agency distributes across human and non-human actors throughout the incident—examining not just what people decided or what technologies accomplished, but how cybersecurity outcomes emerged through the dynamic interactions between SCADA systems, human operators, organizational protocols, regulatory frameworks, and communication infrastructures that collectively constitute the response assemblage. This isn't about cataloging actors. This approach recognizes that cybersecurity effectiveness materializes through relationships rather than individual capabilities.</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>**Enhanced Analysis Note**: During development of this methodology, I discovered that <span class="in">`r world$tech_magazine_name`</span>'s journalistic representation itself demonstrates distributed agency operating between technical experts, journalists, and emerging public understanding. Pay attention to how cyberpunk narrative elements like "The Grid Fought Back" actively shape perception of technological agency rather than simply reflecting it.</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>::: {.assessment-strategy title="Distributed Agency Recognition" collapse="true"}</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>**Analysis Framework**:</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Technological Agency Documentation</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**SCADA System Actions**: How did automated systems participate in threat detection and response coordination? What actions did systems take independently of human operators?</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Smart Grid Infrastructure**: How did smart meter networks and communication protocols shape both vulnerability patterns and protective capabilities?</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Network Segmentation**: How did automated isolation protocols participate in containing the threat while maintaining grid operations?</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Evidence Needed**: Ground your analysis in specific artifact content—alert logs, email exchanges, regulatory filings—that reveals technological agency operating beyond simple tool use. Look for moments where systems act.</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Human-Technology Coordination</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Operational Expertise**: How did <span class="in">`r world$power_operator_fullname`</span> and <span class="in">`r world$it_manager_fullname`</span> work symbiotically with technological systems throughout the incident?</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Interpretive Capabilities**: Where did human expertise complement technological capabilities in threat assessment and response coordination?</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Multi-Domain Knowledge**: How did human operators translate between technological alerts and organizational/regulatory requirements?</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Evidence Needed**: Document those crucial moments where human expertise and technological capabilities worked symbiotically to produce outcomes neither could achieve independently—this is where posthuman approaches become practically visible in cybersecurity work.</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Assemblage Formation Analysis</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Network Mobilization**: How did different organizations (RMU, Phoenix Edison, ACC, DHS) form a coordinated response network?</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Infrastructure Relationships**: What role did both human relationships and technological infrastructures play in enabling rapid multi-stakeholder coordination?</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Temporal Dynamics**: How did the assemblage evolve over the 72-hour incident period?</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Evidence Needed**: Map the formation and evolution of response networks through artifact analysis. Show how assemblages emerge dynamically. They don't exist as fixed organizational structures waiting to be activated—they coalesce through the incident itself.</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>**Format**: 1,500-2,000 words with specific artifact citations</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>**Evaluation Criteria**</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Conceptual Understanding**: Demonstrates comprehension of distributed agency as distinct from individual human or technological action</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Evidence Integration**: Uses specific artifact details to support analysis rather than general observations\</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Assemblage Mapping**: Shows how networks of actors (human and non-human) formed dynamically in response to the incident</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Critical Analysis**: Goes beyond description to analyze how distributed agency shaped cybersecurity outcomes</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example II: Multi-Stakeholder Ethics Assessment {#sec-ethics-assessment}</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>This analysis examines how responsibility for critical infrastructure protection distributes across stakeholder networks while revealing how ethical obligations emerge through relationships rather than residing in individual decisions or organizational mandates—a fundamentally different approach to cybersecurity ethics that recognizes accountability as relational achievement rather than individual possession. Responsibility is networked. The framework draws from feminist science and technology studies to understand how "response-ability" operates across human-technology assemblages rather than being contained within traditional organizational boundaries.</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>**Enhanced Analysis Note**: The <span class="in">`r world$tech_magazine_name`</span> coverage reveals fascinating tensions between journalist ethics in reporting critical infrastructure vulnerabilities and operational security requirements—tensions that themselves demonstrate how ethical obligations emerge relationally rather than through individual professional codes.</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>::: {.implementation-guidance title="Response-ability in Infrastructure Security" collapse="true"}</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>**Ethical Framework Application**:</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Multi-Actor Accountability Analysis</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Responsibility Distribution**: Based on the artifacts, how should accountability for infrastructure protection be distributed among automated systems, human operators, vendor support, and regulatory oversight?</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Relational Ethics**: How do ethical obligations emerge through relationships between stakeholders rather than existing as individual responsibilities?</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Response-ability**: Using Donna Haraway's concept of "response-ability," analyze how stakeholders demonstrated the ability to respond to each other and to technological systems during the incident.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Evidence Needed**: Use specific artifact examples to demonstrate how responsibility operates across networks. Individual actors don't "have" responsibility—they participate in responsibility networks.</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Temporal Ethics Assessment</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Future-Making**: What obligations emerge from this incident for future infrastructure development? How do current technological choices affect future vulnerability and protection possibilities?</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Intergenerational Responsibility**: How does smart grid modernization create both opportunities and obligations for future community security?</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Anticipatory Ethics**: How should the response to this incident shape proactive measures for emerging threats not yet imagined?</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Evidence Needed**: Connect artifact evidence to broader questions about how present decisions actively shape future possibilities for both vulnerability and protection—this is where posthuman approaches reveal their practical implications for cybersecurity policy.</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Community Care Analysis</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Care Networks**: How did different stakeholders demonstrate care for community welfare throughout the incident? Consider utility workers, city officials, federal agencies, and media coverage.</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Situated Ethics**: How did specific local contexts (municipal utility, Arizona regulatory environment, federal coordination) shape ethical responses?</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Public Engagement**: Evaluate the media coverage and community advocacy response through frameworks of care ethics and public accountability.</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Evidence Needed**: Analyze artifact evidence for demonstrations of care that extend beyond formal compliance. Look for care practices that exceed professional obligations—these reveal how ethical responses emerge through relationships rather than rules.</span></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>**Format**: 1,500-2,000 words with theoretical framework integration</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>**Evaluation Criteria**</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Theoretical Application**: Effectively applies posthuman ethics concepts to infrastructure cybersecurity context</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Relational Analysis**: Demonstrates understanding of how ethical obligations emerge through relationships rather than individual decisions</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Community Context**: Connects cybersecurity incident to broader questions of community care and public welfare</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Future Orientation**: Considers how current decisions shape future possibilities and responsibilities</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example III: Assemblage-Informed Recommendations {#sec-response-strategy}</span></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>Develop evidence-based recommendations for improving critical infrastructure cybersecurity that work with assemblages rather than against them—recognizing that effective security emerges through enhanced human-technology coordination rather than through better human control over technological systems or more sophisticated technological replacement of human judgment. Security is relational. Your recommendations should demonstrate understanding of how to design interventions that strengthen assemblage formation rather than optimizing individual components in isolation.</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>**Enhanced Analysis Note**: Communication strategies for translating technical incidents into public policy discussions themselves participate in cybersecurity assemblages by shaping how communities understand infrastructure vulnerabilities and protection possibilities. Assess how media framing actively influences public support for infrastructure cybersecurity investments rather than simply reflecting technical realities.</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>::: {.learner-experience title="Posthuman Cybersecurity Strategy" collapse="true"}</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>**Strategy Development Framework**:</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Human-Technology Integration Enhancement</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Symbiotic Coordination**: Based on incident analysis, recommend specific improvements to human-technology coordination in cybersecurity monitoring and response</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Expertise Distribution**: How should technical knowledge be distributed across human operators and automated systems to optimize threat detection and response?</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Training Integration**: What forms of education and training would enhance human-technology collaboration demonstrated in the incident?</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Requirements**: Ground recommendations in specific incident evidence. Demonstrate understanding of posthuman approaches to technology design—this means designing for assemblages rather than users.</span></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Multi-Stakeholder Network Strengthening</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Assemblage Optimization**: Recommend improvements to coordination mechanisms between municipal utilities, vendor support, regulatory oversight, and federal resources</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Information Sharing**: How should threat intelligence and response coordination be enhanced across organizational boundaries?</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Preparedness Integration**: What forms of multi-stakeholder preparedness would strengthen the assemblages demonstrated during the incident?</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Requirements**: Address both technical and relational dimensions of network coordination through artifact evidence. Technical improvements and relational improvements are not separate—they co-evolve through assemblage dynamics.</span></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Community Resilience Planning</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Public Engagement**: Recommend approaches to community engagement about critical infrastructure cybersecurity that balance transparency with security requirements</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Democratic Oversight**: How should communities participate in decisions about cybersecurity investments and risk management for critical infrastructure?</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Resilience Building**: What forms of community preparedness would complement the technical and organizational measures demonstrated in the incident?</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Requirements**: Connect cybersecurity strategy to broader questions about community resilience and democratic governance. Infrastructure cybersecurity is always already political—recognize this explicitly rather than treating it as technical optimization problem.</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>&nbsp;</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>**Format**: 1,500-2,000 words with specific, implementable recommendations</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>**Evaluation Criteria**</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Evidence-Based**: Recommendations clearly connected to incident analysis and artifact evidence</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Posthuman Integration**: Demonstrates understanding of how to design strategies that work with assemblages rather than treating technology as neutral tool</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Implementation Feasibility**: Recommendations are specific and implementable within realistic resource and regulatory constraints</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Community Context**: Addresses broader questions of democratic governance and community resilience</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example IV: Cross-Case Connections, Methodological Transfer and Scaling {#sec-cross-case-connections}</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>Connect the <span class="in">`r world$utility_name`</span> incident to broader patterns emerging across critical infrastructure cybersecurity contexts while identifying opportunities for methodological transfer that recognizes both sectoral specificities and cross-domain assemblage dynamics—understanding how posthuman approaches scale across different infrastructure contexts without losing attention to local sociotechnical relationships and community contexts. Pattern recognition here isn't about finding universal solutions. It's about understanding how assemblage dynamics operate across different technological and social configurations.</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>::: {.scaffolding-tip title="Assemblage Patterns Across Infrastructure Sectors" collapse="true"}</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>**Connection Development**:</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Sectoral Pattern Recognition</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Infrastructure Similarities**: How do the assemblage dynamics observed in the municipal utility incident connect to cybersecurity challenges in other critical infrastructure sectors (healthcare, financial services, transportation)?</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Technology Patterns**: What similarities exist between smart grid technologies and other infrastructure modernization projects in terms of creating new assemblage relationships?</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Methodological Transfer</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Assessment Framework**: How could the posthuman analysis framework applied to this incident be adapted for other infrastructure cybersecurity contexts?</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Artifact-Based Learning**: What types of authentic artifacts from other sectors would provide similar learning opportunities about distributed agency and multi-stakeholder coordination?</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Scaling Considerations</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Regional Coordination**: How might the multi-stakeholder coordination demonstrated in this local incident scale to regional or national infrastructure protection?</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Policy Implications**: What policy changes would better support the assemblage-based approaches to cybersecurity demonstrated in the incident response?</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>**Format**: 750-1,000 words</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>**Evaluation Criteria**</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Pattern Recognition**: Identifies meaningful connections across infrastructure sectors and cybersecurity contexts</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Methodological Sophistication**: Demonstrates understanding of how posthuman approaches can be adapted across contexts</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Policy Integration**: Connects analysis to broader policy and governance questions</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assessment Rubric {#sec-assessment-rubric}</span></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>The comprehensive evaluation criteria shown in @tbl-rubric provides a 100-point assessment framework that evaluates student understanding across four dimensions—conceptual understanding, evidence use, critical analysis, and media analysis—while recognizing that excellence emerges through integration rather than component optimization. Assessment here mirrors the theoretical framework. Students demonstrate sophistication through relational analysis rather than individual mastery of discrete skills.</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>::: {.column-page}</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Performance Level <span class="pp">|</span> Conceptual Understanding <span class="pp">|</span> Evidence Use <span class="pp">|</span> Critical Analysis <span class="pp">|</span> Media Analysis <span class="pp">|</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="pp">|:------------------|:-------------------------|:-------------|:------------------|:---------------|</span></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Excellent**<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">/&gt;</span>90-100 points <span class="pp">|</span> Sophisticated understanding of posthuman cybersecurity concepts and their application to infrastructure contexts <span class="pp">|</span> Extensive use of artifact evidence to support analysis and recommendations <span class="pp">|</span> Original insights that go beyond course material to develop new connections and applications <span class="pp">|</span> Demonstrates understanding of how tech journalism conventions shape technical content reception and public discourse <span class="pp">|</span></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Proficient**<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">/&gt;</span>80-89 points <span class="pp">|</span> Good understanding of posthuman concepts with appropriate application to case study context <span class="pp">|</span> Adequate use of artifact evidence with some specific examples supporting analysis <span class="pp">|</span> Some original insights connecting course concepts to case study evidence <span class="pp">|</span> Shows awareness of media framing effects on cybersecurity discourse <span class="pp">|</span></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Developing**<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">/&gt;</span>70-79 points <span class="pp">|</span> Basic understanding of posthuman concepts with limited application to cybersecurity context <span class="pp">|</span> General use of case study material with few specific artifact citations <span class="pp">|</span> Limited original insights, primarily restating course concepts <span class="pp">|</span> Basic recognition of journalism vs. technical documentation differences <span class="pp">|</span></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Inadequate**<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">/&gt;</span>Below 70 points <span class="pp">|</span> Minimal understanding of posthuman concepts or failure to connect to cybersecurity context <span class="pp">|</span> Little use of specific case study evidence or artifact material <span class="pp">|</span> No original insights or critical analysis beyond basic summary <span class="pp">|</span> No analysis of media representation impacts on cybersecurity discourse <span class="pp">|</span></span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>: Assessment Rubric {#tbl-rubric}</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a><span class="fu">### Individual Component Evaluation {#sec-component-evaluation}</span></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>Each major component (Examples I-IV) includes specific evaluation criteria that work together to assess students' developing competency in posthuman cybersecurity analysis—recognizing that success emerges through integrated understanding rather than sequential skill acquisition. Success requires:</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Conceptual Integration**: Effective use of posthuman theory to analyze cybersecurity assemblages as they actually operate rather than as they should operate according to organizational charts</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Evidence Application**: Specific citation and analysis of artifact content to support arguments rather than general theoretical application</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Critical Analysis**: Development of original insights that go beyond summarizing provided materials to reveal new connections and implications</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Implementation Orientation**: Recommendations that demonstrate practical understanding of complex sociotechnical systems. Avoid techno-solutionism.</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Cross-Artifact Synthesis**: Integration between technical logs and media coverage analysis that reveals their mutual constitution rather than treating them as separate domains</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Media Literacy Demonstration**: Critical assessment of how journalist interpretation practices actively shape rather than simply report cybersecurity incidents</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="fu">## Submission Guidelines {#sec-submission-guidelines}</span></span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>::: {.implementation-guidance title="Example Submission"}</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>This is simply a sample of how one might assign *all* the examples above.</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a><span class="fu">### Format Requirements {#sec-format-requirements}</span></span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Length**: 5,000-6,500 words total across all components—substantial enough for sophisticated analysis without encouraging word padding</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Citations**: Specific references to case study artifacts integrated with course theoretical materials rather than applied to them</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Organization**: Clear section headers corresponding to assessment framework components while maintaining analytical flow across sections</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Academic Writing**: Graduate-level analysis that uses cybersecurity and posthuman theoretical vocabulary precisely rather than impressively</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="fu">### Citation Requirements {#sec-citation-requirements}</span></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>**Case Study Artifacts**: Cite specific documents, email excerpts, technical logs, etc. using format:</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Based on the SCADA alert logs, automated systems detected..." (CIRCUIT: SCADA System Alert Log)</span></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>**Theoretical Integration**: Connect analysis to course readings on posthuman ethics, assemblage theory, and critical cybersecurity studies</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>**External Sources**: Additional sources welcome but not required; focus on deep analysis of provided case study materials</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="fu">### Submission Process {#sec-submission-process}</span></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>Submit via course learning management system by <span class="sc">\[</span>date to be specified by instructor<span class="sc">\]</span>. Include:</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Complete analysis document (PDF or DOCX)</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Brief reflection memo (500 words) discussing what you learned about posthuman approaches to cybersecurity through engaging with the artifact-based methodology</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="fu">## Additional Resources {#sec-additional-resources}</span></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a><span class="fu">### Posthuman Cybersecurity Theory {#sec-posthuman-theory}</span></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>Key concepts for assessment framework application:</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Assemblage Theory**: Deleuze and Guattari's concept of heterogeneous networks producing outcomes through relationships</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Actor-Network Theory**: Bruno Latour's approach to analyzing how humans and non-humans participate in network formation</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Postphenomenological Ethics**: Don Ihde and Peter-Paul Verbeek's analysis of how technologies mediate human relationships</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Response-ability**: Donna Haraway's concept of relational responsibility and care across networks</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Critical Infrastructure Studies**: Analysis of how technical systems and social relationships co-constitute security outcomes</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a><span class="fu">### Technical Cybersecurity Context {#sec-technical-context}</span></span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>For students needing additional technical background:</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**SCADA Systems**: Supervisory control and data acquisition systems for industrial process monitoring and control</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Industrial Protocols**: Communication standards (Modbus, DNP3, EtherNet/IP) used in operational technology networks</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Smart Grid Architecture**: Integration of digital communication and control capabilities with traditional electrical infrastructure\</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**OT/IT Convergence**: Operational technology and information technology integration creating new attack surfaces and defensive capabilities</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Critical Infrastructure Protection**: Multi-stakeholder approaches to securing essential services and systems</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="fu">### Progressive Learning Scaffolding {#sec-progressive-scaffolding}</span></span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>**Cognitive Load Management Strategy**:</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Stage 1**: Technical Artifact Analysis</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Focus on understanding SCADA logs, email exchanges, and regulatory filings</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Use provided **artifact navigation guide** for key technical concepts</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Complete Part I analysis before moving to media components</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Stage 2**: Media Representation Analysis</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Apply **media analysis framework** for systematic journalism evaluation</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Compare <span class="in">`r world$tech_magazine_name`</span> coverage with technical artifacts</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Identify differences between technical accuracy and public engagement</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Stage 3**: Integrated Synthesis</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Use **synthesis templates** for connecting technical and narrative elements</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Complete cross-modal analysis and policy implications</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Integrate all components into final submission</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

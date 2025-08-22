@@ -70,12 +70,12 @@ The demo incorporates several innovations in cybersecurity education:
 **CIRCUIT: The Ribera Power Grid Incident** is presented in three
 coordinated parts:
 
-- **[Introduction](docs/circuit-intro.html)**: Context, methodology, and
-  learning framework
-- **[Content](docs/circuit-content.html)**: Six authentic artifacts
-  documenting the complete incident  
-- **[Assignment](docs/circuit-assignment.html)**: Assessment framework
-  with analysis questions
+- **[Introduction](https://ryanstraight.github.io/cyber-dimensions-demo/circuit-intro.html)**:
+  Context, methodology, and learning framework
+- **[Content](https://ryanstraight.github.io/cyber-dimensions-demo/circuit-content.html)**:
+  Six authentic artifacts documenting the complete incident  
+- **[Assignment](https://ryanstraight.github.io/cyber-dimensions-demo/circuit-assignment.html)**:
+  Assessment framework with analysis questions
 
 ### Educational Features
 
